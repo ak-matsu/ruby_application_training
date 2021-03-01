@@ -1,3 +1,9 @@
+require "./drink"
+require "./vending_machine"
+require "./user"
+
+#このapplication.rbファイルで全てのファイルを読み込みさせます。
+
 #自販機で必要な3つのクラスを定義
 #Drink販売する飲み物 導入された飲み物を実態あるデータにする
 class Drink
