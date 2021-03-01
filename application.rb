@@ -73,5 +73,8 @@ vending_machine = VendingMachine.new(drinks)
 vending_machine.show_drinks
 
 puts  "あなたはお客様です。投入金額を決めてください"
+#投入金額をユーザーで入力
 money = gets.to_i
+
+#Userクラスのインスタンスを生成して変数userに代入。
 user = User.new(money)
