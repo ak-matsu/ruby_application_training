@@ -42,6 +42,18 @@ class VendingMachine
       i += 1
     end
   end
+
+  def pay(user)
+    puts '商品を選んでください'
+    chosen_drink = user.choose_drink
+    change = user.money - self.drinks[chosen_drink].fee
+    if change >= 0
+      puts 'ご利用ありがとうございました！お釣りは#{change}円です。'
+    else
+      puts '投入金額が足りません。'
+    end
+  end
+
 end
 
 #購入する人 購入したい商品を決めて、お金を投入する。
@@ -52,6 +64,10 @@ class User
   
   def money
     @money
+  end
+
+  def choose_drink
+    gets.to_i
   end
 end
 
@@ -78,3 +94,5 @@ money = gets.to_i
 
 #Userクラスのインスタンスを生成して変数userに代入。
 user = User.new(money)
+
+vending_machine.pay(user)
