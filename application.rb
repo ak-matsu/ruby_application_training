@@ -45,7 +45,11 @@ class VendingMachine
 
   def pay(user)
     puts '商品を選んでください'
+    #Userクラスに定義したchoose_drinkメソッドを呼び出しています。
     chosen_drink = user.choose_drink
+
+    #「ユーザーの投入金額」と「選ばれた商品の金額」の差分を計算して、
+    #その結果（お釣り）を変数changeに代入しています。
     change = user.money - self.drinks[chosen_drink].fee
     if change >= 0
       puts 'ご利用ありがとうございました！お釣りは#{change}円です。'
@@ -85,6 +89,7 @@ end
 #VendingMachineクラスのインスタンスを生成。drinksへ3つの商品が格納され
 #initializeメソッドへで生成した@drinksへ代入される。
 vending_machine = VendingMachine.new(drinks)
+
 #生成したインスタンスに対してshow_drinksメソッドを適用させる。
 vending_machine.show_drinks
 
@@ -95,4 +100,5 @@ money = gets.to_i
 #Userクラスのインスタンスを生成して変数userに代入。
 user = User.new(money)
 
+#VendingMachineクラスに定義した、payメソッドを呼び出す。
 vending_machine.pay(user)
