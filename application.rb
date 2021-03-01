@@ -25,7 +25,8 @@ class User
 end
 
 puts "商品を用意してください"
-drings  = []
+drinks  = []
+#3つのデータがdrinksの中に入るよう設定。
 3.times do |i|
   puts "商品名を入力してください"
   drink_name  = gets.chomp
@@ -34,4 +35,5 @@ drings  = []
   drinks << Drink.new(drink_name,drink_fee)
 end
 
+#最後に配列の中身を確認するため、puts drinksで出力
 puts drinks
