@@ -1,6 +1,7 @@
 require "./drink"
 require "./vending_machine"
 require "./user"
+require "./slot_game"
 
 #このapplication.rbファイルで全てのファイルを読み込みさせます。
 #自販機で必要な3つのクラスを定義

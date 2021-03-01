@@ -34,6 +34,8 @@ class VendingMachine
     change = user.money - self.drinks[chosen_drink].fee
     if change >= 0
       puts "ご利用ありがとうございました！お釣りは#{change}円です。"
+      #SlotGameクラスのインスタンスを生成しつつ、slot_gameメソッドを呼び出している。
+      SlotGame.new.play_slot
     else
       puts "投入金額が足りません。"
     end
