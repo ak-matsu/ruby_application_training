@@ -1,4 +1,5 @@
 #自販機で必要な3つのクラスを定義
+#Drink販売する飲み物 導入された飲み物を実態あるデータにする
 class Drink
   def initialize(name,fee)
     @name = name
@@ -16,10 +17,28 @@ class Drink
   
 end
 
+#VendingMachine自販機 ユーザーに販売している商品を見せて、
+#投入金額からお釣りを計算する
 class VendingMachine
-  
+  def initialize(drinks)
+    @drinks = drinks
+  end
+
+  def drinks
+    @drinks
+  end
+
+  def show_drinks
+    puts  "いらっしゃいませ、以下の商品を販売しています。"
+    i = 0
+    self.drinks.each  do  |drink|
+      puts "【#{i}】#{drink.name}:  #{drink.fee}円"
+      i += 1
+    end
+  end
 end
 
+#購入する人 購入したい商品を決めて、お金を投入する。
 class User
   
 end
@@ -35,5 +54,5 @@ drinks  = []
   drinks << Drink.new(drink_name,drink_fee)
 end
 
-#最後に配列の中身を確認するため、puts drinksで出力
-puts drinks
+vending_machine = VendingMachine.new(drinks)
+vending_machine.show_drinks
