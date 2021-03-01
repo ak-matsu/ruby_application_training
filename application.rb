@@ -46,7 +46,13 @@ end
 
 #購入する人 購入したい商品を決めて、お金を投入する。
 class User
+  def initialize(money)
+    @money  = money
+  end
   
+  def money
+    @money
+  end
 end
 
 puts "商品を用意してください"
@@ -65,3 +71,7 @@ end
 vending_machine = VendingMachine.new(drinks)
 #生成したインスタンスに対してshow_drinksメソッドを適用させる。
 vending_machine.show_drinks
+
+puts  "あなたはお客様です。投入金額を決めてください"
+money = gets.to_i
+user = User.new(money)
