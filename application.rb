@@ -44,7 +44,7 @@ class VendingMachine
   end
 
   def pay(user)
-    puts '商品を選んでください'
+    puts "商品を選んでください"
     #Userクラスに定義したchoose_drinkメソッドを呼び出しています。
     chosen_drink = user.choose_drink
 
@@ -52,9 +52,9 @@ class VendingMachine
     #その結果（お釣り）を変数changeに代入しています。
     change = user.money - self.drinks[chosen_drink].fee
     if change >= 0
-      puts 'ご利用ありがとうございました！お釣りは#{change}円です。'
+      puts "ご利用ありがとうございました！お釣りは#{change}円です。"
     else
-      puts '投入金額が足りません。'
+      puts "投入金額が足りません。"
     end
   end
 
